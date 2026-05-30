@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 教我怎麼協助 AI 找到 API</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f3f4f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+      color: #1f2937;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #111827, #374151);
+      color: white;
+      border-radius: 28px;
+      padding: 48px;
+      margin-bottom: 28px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.16);
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.16);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 15px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 46px;
+      line-height: 1.18;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin-top: 20px;
+      font-size: 22px;
+      line-height: 1.6;
+      color: #e5e7eb;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 34px;
+      margin-bottom: 22px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 28px;
+      color: #111827;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.75;
+      margin: 0 0 14px;
+    }
+
+    ul, ol {
+      margin: 12px 0 0 22px;
+      padding: 0;
+    }
+
+    li {
+      font-size: 19px;
+      line-height: 1.8;
+      margin-bottom: 6px;
+    }
+
+    .quote {
+      background: #f9fafb;
+      border-left: 6px solid #111827;
+      padding: 18px 22px;
+      border-radius: 14px;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.6;
+      margin: 20px 0 4px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .mini {
+      background: #f9fafb;
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .mini h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    code {
+      display: inline-block;
+      background: #111827;
+      color: #f9fafb;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 17px;
+      margin: 6px 0;
+    }
+
+    .highlight {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 42px 28px;
+      background: #111827;
+      color: white;
+      border-radius: 28px;
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.55;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.16);
+    }
+
+    .small {
+      font-size: 16px;
+      color: #6b7280;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 720px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .hero {
+        padding: 36px 28px;
+      }
+
+      .card {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <section class="hero">
+      <div class="tag">跟工作無關的 AI 應用</div>
+      <h1>AI 教我怎麼<br />協助 AI 找到 API</h1>
+      <div class="subtitle">
+        從一個飲料團購 Telegram Bot，學到一種更實用的 AI 協作方式。
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>起點：只是想查飲料團購訂單</h2>
+      <p>我做了一個 Telegram Bot，原本只是想幫忙處理飲料團購。</p>
+      <p>後來我想加兩個功能：</p>
+      <ul>
+        <li>查看團員訂單明細：誰訂了什麼、數量多少、有沒有備註</li>
+        <li>查看 nidin 訂單狀態：目前訂單是成立、處理中，還是其他狀態</li>
+      </ul>
+      <div class="quote">問題是：nidin 沒有公開 API 文件。</div>
+    </section>
+
+    <section class="card">
+      <h2>以前可能會卡住</h2>
+      <p>沒有 API 文件，通常第一個反應是：</p>
+      <div class="quote">那是不是就沒辦法了？</div>
+      <p>但這次 AI 沒有直接亂猜 API。</p>
+      <p>它反而教我一件事：</p>
+      <div class="quote">你可以幫我把我看不到的資訊找出來。</div>
+    </section>
+
+    <section class="card">
+      <h2>AI 教我的方法</h2>
+      <ol>
+        <li>開啟 nidin 後台</li>
+        <li>按 F12</li>
+        <li>切到 Network</li>
+        <li>實際操作「查看訂單」</li>
+        <li>找出相關 request</li>
+        <li>複製成 curl</li>
+        <li>貼回給 AI 分析</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>我跟 AI 的分工</h2>
+      <div class="grid">
+        <div class="mini">
+          <h3>我能做到的</h3>
+          <ul>
+            <li>登入 nidin 後台</li>
+            <li>操作實際畫面</li>
+            <li>用 F12 看到 request</li>
+            <li>複製 curl、token、response</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>AI 能做到的</h3>
+          <ul>
+            <li>判斷哪個 request 是關鍵</li>
+            <li>分析 API path</li>
+            <li>看懂 header 和 token</li>
+            <li>解讀 response 欄位</li>
+            <li>幫我寫成 Bot 功能</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>找到的關鍵</h2>
+      <p>後來從 request 裡找到查詢訂單資訊的 API：</p>
+      <code>order/{id}/info</code>
+      <p>並且發現需要帶上：</p>
+      <code>MC-API-Token</code>
+      <p>有了這些資訊後，Bot 就可以開始查 nidin 訂單資料。</p>
+    </section>
+
+    <section class="card">
+      <h2>最後完成的功能</h2>
+      <div class="grid">
+        <div class="mini">
+          <h3>查看團員訂單明細</h3>
+          <ul>
+            <li>團員名稱</li>
+            <li>訂購品項</li>
+            <li>數量</li>
+            <li>備註</li>
+            <li>訂單內容</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <h3>查看 nidin 訂單狀態</h3>
+          <ul>
+            <li>訂單目前狀態</li>
+            <li>團購是否成立</li>
+            <li>是否仍在處理中</li>
+            <li>目前進行階段</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card highlight">
+  <h2>真正有收穫的地方</h2>
+  <p>這次重點不是：</p>
+  <div class="quote">AI 幫我找到 API。</div>
+  <p>而是：</p>
+  <div class="quote">AI 教我怎麼協助 AI 找到 API。</div>
+  <p>AI 不一定一開始就知道答案，但它可以教我怎麼觀察、怎麼整理資料，並把未知問題拆成它能協助分析的形式。</p>
+</section>
+
+<section class="card">
+  <h2>這跟工作有什麼關係？</h2>
+  <p>雖然這次只是飲料團購，但我後來發現，這其實不是單純在找 API，而是在練習一種「理解未知系統」的方法。</p>
+  <p>對軟體工程師來說，很多工作情境也會遇到類似問題：文件不完整、流程不清楚、資料來源很多，但需要把它整理成可實作的功能。</p>
+  <ul>
+    <li>分析既有系統流程：觀察前後台操作，整理出實際資料流與關鍵步驟</li>
+    <li>協助測試工具開發：把重複操作、查詢資料、比對結果的流程轉成工具</li>
+    <li>整理 API response：請 AI 協助理解欄位意義、資料結構與可能狀態</li>
+    <li>排查問題來源：從 request、response、log 中找出異常點</li>
+    <li>競品或功能研究：在合法範圍內觀察操作流程，整理成可參考的設計方向</li>
+    <li>降低溝通成本：把零散資訊整理成文件、流程圖或可交接的說明</li>
+  </ul>
+  <p class="small">前提是要在合法、有權限、符合公司資安與資料使用規範的情況下使用。</p>
+</section>
+
+    <section class="footer">
+      AI 不一定知道答案，<br />
+      但它可以教你怎麼把答案找出來，<br />
+      再一起把它變成可用的功能。
+    </section>
+
+  </main>
+</body>
+</html>
